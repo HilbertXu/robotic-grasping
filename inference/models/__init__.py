@@ -16,5 +16,11 @@ def get_network(network_name):
     elif network_name == 'grconvnet4':
         from .grconvnet4 import GenerativeResnet
         return GenerativeResnet
+    elif network_name == 'attn_grconvnet':
+        from .atten_grconvnet import AttentiveGenerativeResnet
+        return AttentiveGenerativeResnet
+    elif network_name == 'gr_unet':
+        from .gr_unet import GR_UNet
+        return GR_UNet
     else:
         raise NotImplementedError('Network {} is not implemented'.format(network_name))

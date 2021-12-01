@@ -59,7 +59,11 @@ class CornellDataset(GraspDatasetBase):
 
     def get_rgb(self, idx, rot=0, zoom=1.0, normalise=True):
         rgb_img = image.Image.from_file(self.rgb_files[idx])
+
+        print(rgb_img.shape)
+
         center, left, top = self._get_crop_attrs(idx)
+        
         rgb_img.rotate(rot, center)
         rgb_img.crop((top, left), (min(480, top + self.output_size), min(640, left + self.output_size)))
         rgb_img.zoom(zoom)

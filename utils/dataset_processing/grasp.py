@@ -80,6 +80,7 @@ class GraspRectangles:
                         _gr_text_to_no(p2),
                         _gr_text_to_no(p3)
                     ])
+                    print(gr)
 
                     grs.append(GraspRectangle(gr))
 
@@ -190,6 +191,7 @@ class GraspRectangles:
         :return: float, mean centre of all GraspRectangles
         """
         points = [gr.points for gr in self.grs]
+        print(np.vstack(points).shape)
         return np.mean(np.vstack(points), axis=0).astype(np.int)
 
 
